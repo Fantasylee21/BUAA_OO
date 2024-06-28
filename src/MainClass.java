@@ -1,10 +1,11 @@
-import com.oocourse.spec3.main.Runner;
+import com.oocourse.library3.LibraryScanner;
+import com.oocourse.library3.LibrarySystem;
 
 public class MainClass {
-    public static void main(String[] args) throws Exception {
-        Runner runner = new Runner(MyPerson.class, MyNetwork.class,
-                MyTag.class, MyMessage.class, MyEmojiMessage.class,
-                MyNoticeMessage.class, MyRedEnvelopeMessage.class);
-        runner.run();
+    public static void main(String[] args) {
+        LibraryScanner scanner = LibrarySystem.SCANNER;
+        Library library = new Library(scanner);
+        library.init();
+        library.run();
     }
 }
